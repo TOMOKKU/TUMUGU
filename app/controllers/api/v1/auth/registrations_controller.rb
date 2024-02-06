@@ -1,4 +1,4 @@
-class Api::V1::Auth::RegistratinonsController < ApplicationController
+class Api::V1::Auth::RegistrationsController < DeviseTokenAuth::RegistrationsController
 
     def update
         user_params = params.require(:user).permit(:name, :image, :description, :follow_notification_enabled, :thank_notification_enabled, :comment_notification_enabled, tag_names: [])
