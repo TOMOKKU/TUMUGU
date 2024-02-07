@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_02_06_060622) do
+ActiveRecord::Schema.define(version: 2024_02_07_053819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reservation", force: :cascade do |t|
+    t.integer "reserver_id"
+    t.integer "reserved_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
